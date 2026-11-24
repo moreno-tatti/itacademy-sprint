@@ -276,7 +276,7 @@ CREATE TABLE IF NOT EXISTS transactions (
 -- cargamos los datos del archivo csv
 SET GLOBAL local_infile = 1;  -- habilitamos el LOAD DATA LOCAL para cargar el archivo
 
-LOAD DATA
+LOAD DATA LOCAL
 INFILE "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/N1-Ex.8__american_users.csv"
 INTO TABLE dim_users
 FIELDS TERMINATED BY ','
@@ -285,7 +285,7 @@ IGNORE 1 ROWS
 (user_id, name, surname, phone, email, birth_date, country, city, postal_code, address, signup_date, user_segment, income_band)
 SET region = 'America';
 
-LOAD DATA
+LOAD DATA LOCAL
 INFILE "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/N1-Ex.8__european_users.csv"
 INTO TABLE dim_users
 FIELDS TERMINATED BY ','
